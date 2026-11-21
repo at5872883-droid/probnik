@@ -1,0 +1,917 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Партнёр — каркасные бани и всесезонные дома под ключ в Самаре</title>
+<meta name="description" content="Строительство каркасных бань и всесезонных домов под ключ в Самаре и Самарской области. Проекты А-фрейм, барнхаус, шале. Работа по договору, оплата в три этапа, гарантия на работы.">
+<meta property="og:title" content="Партнёр — бани и дома под ключ в Самаре">
+<meta property="og:description" content="Каркасные бани и всесезонные дома по проекту или вашему эскизу. Договор, оплата в три этапа, гарантия.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F6F1E8">
+<meta name="author" content="Григорьев Евгений Павлович">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<style>
+  :root{
+    --cream:#F6F1E8;
+    --sand:#EDE4D5;
+    --paper:#FFFCF6;
+    --ink:#1B1A17;
+    --muted:#6B6459;
+    --forest:#22382D;
+    --forest-soft:#2E4A3C;
+    --clay:#B4552C;
+    --clay-soft:#C96B3F;
+    --line:rgba(27,26,23,.12);
+    --line-strong:rgba(27,26,23,.22);
+    --shadow:0 18px 40px -24px rgba(27,26,23,.45);
+    --radius:20px;
+    --serif:Georgia,'Times New Roman',serif;
+    --sans:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{scroll-behavior:smooth;scroll-padding-top:96px}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0;letter-spacing:-.01em}
+  h1{font-size:clamp(2.2rem,5vw,4rem)}
+  h2{font-size:clamp(1.8rem,3.4vw,2.9rem)}
+  h3{font-size:1.25rem;line-height:1.3}
+  p{margin:0}
+  .wrap{width:min(1180px,calc(100% - 40px));margin:0 auto}
+  .section{padding:clamp(56px,8vw,104px) 0}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--clay);font-weight:600;margin-bottom:18px;
+  }
+  .eyebrow::before{content:"";width:26px;height:1px;background:var(--clay)}
+  .lede{color:var(--muted);font-size:1.05rem;max-width:56ch}
+  .muted{color:var(--muted)}
+
+
+  .wm{
+    position:fixed;right:18px;bottom:16px;z-index:55;pointer-events:none;
+    font-size:10px;line-height:1;letter-spacing:.16em;text-transform:uppercase;
+    color:#fff;opacity:.72;font-weight:600;text-shadow:0 0 6px rgba(27,26,23,.55), 0 1px 2px rgba(27,26,23,.45);
+    user-select:none;-webkit-user-select:none;white-space:nowrap;
+  }
+  @media (max-width:680px){.wm{right:10px;bottom:10px;font-size:8.5px;letter-spacing:.1em;opacity:.7}}
+  body.modal-open .wm{display:none}
+  .skip-link{
+    position:absolute;left:16px;top:-100px;z-index:200;
+    background:var(--forest);color:#F8F4EB;padding:12px 20px;border-radius:0 0 12px 12px;
+    text-decoration:none;font-size:.92rem;transition:top .18s ease;
+  }
+  .skip-link:focus{top:0}
+  :focus-visible{outline:3px solid var(--clay);outline-offset:3px}
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:15px 26px;border-radius:999px;border:1px solid transparent;
+    font:inherit;font-size:.98rem;font-weight:600;text-decoration:none;
+    cursor:pointer;transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--forest);color:#F8F4EB}
+  .btn-primary:hover{background:var(--forest-soft)}
+  .btn-clay{background:var(--clay);color:#fff}
+  .btn-clay:hover{background:var(--clay-soft)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--ink);background:rgba(27,26,23,.04)}
+  .btn svg{flex:none}
+
+  .site-header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(246,241,232,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease,box-shadow .2s ease;
+  }
+  .site-header.scrolled{border-color:var(--line);box-shadow:0 10px 30px -28px rgba(0,0,0,.7)}
+  .header-inner{display:flex;align-items:center;gap:28px;height:74px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand-mark{
+    width:42px;height:42px;border-radius:13px;background:var(--forest);
+    display:grid;place-items:center;flex:none;
+  }
+  .brand-name{font-family:var(--serif);font-size:1.3rem;letter-spacing:.04em;line-height:1}
+  .brand-sub{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:4px;white-space:nowrap}
+  .nav{margin-left:auto;display:flex;align-items:center;gap:6px}
+  .nav a{
+    text-decoration:none;font-size:.94rem;color:var(--muted);
+    padding:9px 13px;border-radius:999px;transition:color .15s,background .15s;
+  }
+  .nav a:hover{color:var(--ink);background:rgba(27,26,23,.05)}
+  .nav-cta{display:none}
+  .burger{
+    display:none;margin-left:auto;width:44px;height:44px;border-radius:12px;
+    border:1px solid var(--line-strong);background:transparent;cursor:pointer;
+    align-items:center;justify-content:center;
+  }
+  .burger span{display:block;width:18px;height:1.6px;background:var(--ink);position:relative}
+  .burger span::before,.burger span::after{content:"";position:absolute;left:0;width:18px;height:1.6px;background:var(--ink)}
+  .burger span::before{top:-6px}
+  .burger span::after{top:6px}
+
+  .hero{padding:clamp(28px,4vw,52px) 0 clamp(48px,7vw,84px)}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,4vw,56px);align-items:center}
+  .hero-copy h1{margin-bottom:20px}
+  .hero-copy h1 em{font-style:normal;color:var(--clay)}
+  .hero-copy .lede{font-size:1.08rem}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .hero-note{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:.9rem;color:var(--muted)}
+  .dot{width:7px;height:7px;border-radius:50%;background:#3F8A5B;box-shadow:0 0 0 4px rgba(63,138,91,.16);flex:none}
+  .hero-media{position:relative}
+  .hero-media img{
+    width:100%;aspect-ratio:5/5.4;object-fit:cover;border-radius:var(--radius);
+    box-shadow:var(--shadow);
+  }
+  .hero-badge{
+    position:absolute;left:-18px;bottom:26px;background:var(--paper);
+    border:1px solid var(--line);border-radius:16px;padding:14px 18px;
+    box-shadow:0 20px 40px -30px rgba(0,0,0,.6);display:flex;gap:14px;align-items:center;
+  }
+  .hero-badge .stars{color:var(--clay);font-size:.85rem;letter-spacing:2px}
+  .hero-badge b{display:block;font-size:1rem;line-height:1.2}
+  .hero-badge small{color:var(--muted);font-size:.78rem}
+
+  .facts{border-block:1px solid var(--line);background:var(--sand)}
+  .facts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}
+  .fact{padding:26px 22px;border-right:1px solid var(--line)}
+  .fact:last-child{border-right:0}
+  .fact b{display:block;font-family:var(--serif);font-size:1.9rem;line-height:1.1}
+  .fact span{font-size:.88rem;color:var(--muted);display:block;margin-top:6px}
+
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+  .service{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px 24px;display:flex;flex-direction:column;gap:12px;
+  }
+  .service-icon{width:44px;height:44px;border-radius:12px;background:var(--sand);display:grid;place-items:center}
+  .service p{font-size:.94rem;color:var(--muted);flex:1}
+  .service .price{font-family:var(--serif);font-size:1.5rem}
+  .service .price small{font-family:var(--sans);font-size:.78rem;color:var(--muted);display:block;margin-top:2px}
+
+  .section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 26px}
+  .filter{
+    font:inherit;font-size:.9rem;padding:9px 18px;border-radius:999px;
+    border:1px solid var(--line-strong);background:transparent;color:var(--muted);
+    cursor:pointer;transition:all .15s ease;
+  }
+  .filter:hover{color:var(--ink);border-color:var(--ink)}
+  .filter[aria-pressed="true"]{background:var(--forest);border-color:var(--forest);color:#F8F4EB}
+
+  .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .project{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;text-align:left;
+    padding:0;cursor:pointer;font:inherit;color:inherit;text-decoration:none;
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+  }
+  .project:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-strong)}
+  .project-img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--sand);display:block}
+  .project-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .project:hover .project-img img{transform:scale(1.04)}
+  .tag{
+    position:absolute;left:14px;top:14px;background:rgba(255,252,246,.94);
+    border-radius:999px;padding:6px 12px;font-size:.74rem;letter-spacing:.06em;
+    text-transform:uppercase;font-weight:600;color:var(--forest);
+  }
+  .project-body{padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .project-body h3{font-size:1.1rem}
+  .project-specs{font-size:.86rem;color:var(--muted)}
+  .project-foot{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-top:auto;padding-top:12px}
+  .project-price{font-family:var(--serif);font-size:1.35rem;white-space:nowrap}
+  .project-loc{font-size:.78rem;color:var(--muted);text-align:right}
+  .projects-note{margin-top:22px;font-size:.86rem;color:var(--muted)}
+
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:44px;counter-reset:step}
+  .step{position:relative;padding-top:26px;border-top:2px solid var(--line)}
+  .step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    position:absolute;top:-14px;left:0;background:var(--cream);padding-right:10px;
+    font-family:var(--serif);font-size:.95rem;color:var(--clay);
+  }
+  .step h3{font-size:1.02rem;margin-bottom:8px}
+  .step p{font-size:.9rem;color:var(--muted)}
+
+  .about{background:var(--forest);color:#F3EEE3}
+  .about .eyebrow{color:#D99A6E}
+  .about .eyebrow::before{background:#D99A6E}
+  .about-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,68px);align-items:center}
+  .about h2{color:#FCF8EF}
+  .about .lede{color:rgba(243,238,227,.78)}
+  .checklist{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:14px}
+  .checklist li{display:flex;gap:14px;align-items:flex-start;font-size:.97rem}
+  .checklist svg{flex:none;margin-top:3px}
+  .about-media img{width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:var(--radius)}
+  .about-media{position:relative}
+  .about-quote{
+    position:absolute;right:-10px;bottom:-18px;max-width:250px;background:var(--paper);
+    color:var(--ink);border-radius:16px;padding:16px 18px;font-size:.88rem;line-height:1.5;
+    box-shadow:0 24px 50px -30px rgba(0,0,0,.8);
+  }
+  .about-quote b{display:block;font-family:var(--serif);font-size:1rem;margin-bottom:4px}
+
+  .reviews-head{display:grid;grid-template-columns:340px 1fr;gap:36px;align-items:start}
+  .rating-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;position:sticky;top:96px;
+  }
+  .rating-big{font-family:var(--serif);font-size:3.4rem;line-height:1}
+  .rating-card .stars{color:var(--clay);letter-spacing:3px;margin:10px 0 6px}
+  .rating-card p{font-size:.88rem;color:var(--muted)}
+  .rating-bars{display:grid;gap:8px;margin:20px 0 22px}
+  .bar-row{display:flex;align-items:center;gap:10px;font-size:.8rem;color:var(--muted)}
+  .bar{height:6px;background:var(--sand);border-radius:99px;flex:1;overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--clay);border-radius:99px}
+  .reviews-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .review{
+    background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:22px 22px 20px;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .review .stars{color:var(--clay);font-size:.82rem;letter-spacing:2px}
+  .review p{font-size:.94rem}
+  .review-meta{display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:8px}
+  .avatar{
+    width:36px;height:36px;border-radius:50%;background:var(--sand);color:var(--forest);
+    display:grid;place-items:center;font-size:.85rem;font-weight:600;flex:none;
+  }
+  .review-meta b{font-size:.9rem;display:block;font-weight:600}
+  .review-meta small{color:var(--muted);font-size:.78rem}
+
+  .faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,64px)}
+  details.faq{border-top:1px solid var(--line);padding:18px 0}
+  details.faq summary{
+    cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;
+    align-items:center;font-size:1.02rem;font-weight:600;
+  }
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary::after{content:"+";font-family:var(--serif);font-size:1.5rem;color:var(--clay);line-height:1}
+  details.faq[open] summary::after{content:"–"}
+  details.faq p{margin-top:12px;color:var(--muted);font-size:.95rem;max-width:62ch}
+
+  .contact{background:var(--sand);border-top:1px solid var(--line)}
+  .contact-box{
+    background:var(--forest);color:#F3EEE3;border-radius:28px;
+    padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1.2fr .8fr;
+    gap:clamp(24px,4vw,48px);align-items:center;
+  }
+  .contact-box h2{color:#FCF8EF}
+  .contact-box .lede{color:rgba(243,238,227,.8)}
+  .contact-actions{display:flex;flex-direction:column;gap:12px}
+  .contact-actions .btn{width:100%}
+  .btn-light{background:#F8F4EB;color:var(--forest)}
+  .btn-light:hover{background:#fff}
+  .btn-outline-light{background:transparent;border-color:rgba(248,244,235,.45);color:#F8F4EB}
+  .btn-outline-light:hover{border-color:#F8F4EB}
+  .contact-note{font-size:.82rem;color:rgba(243,238,227,.8);text-align:center}
+  .geo{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .geo span{
+    font-size:.8rem;padding:6px 12px;border-radius:999px;
+    border:1px solid rgba(248,244,235,.28);color:rgba(248,244,235,.92);
+  }
+
+  footer{padding:38px 0;background:var(--cream)}
+  .footer-inner{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  .footer-inner p{font-size:.82rem;color:var(--muted);max-width:60ch}
+  .footer-inner a{font-size:.86rem;color:var(--muted)}
+
+  .modal{
+    position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:20px;
+    background:rgba(20,19,17,.62);backdrop-filter:blur(4px);
+  }
+  .modal.open{display:grid}
+  body.modal-open{overflow:hidden}
+  .modal-card{
+    background:var(--paper);border-radius:24px;overflow:hidden;max-width:920px;width:100%;
+    max-height:92vh;overflow-y:auto;display:grid;grid-template-columns:1.05fr .95fr;
+    animation:pop .22s ease;
+  }
+  @keyframes pop{from{transform:translateY(12px);opacity:0}to{transform:none;opacity:1}}
+  .modal-img{min-height:280px;background:var(--sand)}
+  .modal-img img{width:100%;height:100%;object-fit:cover}
+  .modal-body{padding:28px;display:flex;flex-direction:column;gap:12px}
+  .modal-body h3{font-size:1.5rem}
+  .modal-close{
+    position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;
+    border:0;background:rgba(255,252,246,.94);cursor:pointer;font-size:1.1rem;
+  }
+  .modal-price{font-family:var(--serif);font-size:1.7rem}
+  .modal-specs{font-size:.92rem;color:var(--muted)}
+  .modal-body .btn{margin-top:auto}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:1000px){
+    html{scroll-padding-top:80px}
+    .hero-grid{grid-template-columns:1fr}
+    .hero-media img{aspect-ratio:16/11}
+    .hero-badge{left:12px;bottom:12px}
+    .facts-grid{grid-template-columns:1fr 1fr}
+    .fact:nth-child(2){border-right:0}
+    .fact:nth-child(1),.fact:nth-child(2){border-bottom:1px solid var(--line)}
+    .services-grid{grid-template-columns:1fr}
+    .projects-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr;gap:22px}
+    .about-grid{grid-template-columns:1fr}
+    .about-quote{position:static;margin-top:14px;max-width:none}
+    .reviews-head{grid-template-columns:1fr}
+    .rating-card{position:static}
+    .faq-grid{grid-template-columns:1fr}
+    .contact-box{grid-template-columns:1fr}
+    .nav{display:none}
+    .header-cta{display:none}
+    .burger{display:flex}
+    .nav.open{
+      display:flex;position:absolute;left:0;right:0;top:74px;background:var(--cream);
+      border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;
+      padding:12px 20px 20px;gap:4px;box-shadow:0 22px 30px -30px rgba(0,0,0,.6);
+    }
+    .nav.open a{padding:12px 8px;font-size:1rem}
+    .nav.open .nav-cta{display:inline-flex;justify-content:center;margin-top:10px;padding:14px 22px;color:#F8F4EB}
+    .nav.open .nav-cta:hover{background:var(--forest-soft)}
+  }
+  @media (max-width:680px){
+    body{font-size:16px}
+    .brand-sub{display:none}
+    .header-inner{height:66px}
+    .nav.open{top:66px}
+    .reviews-grid{grid-template-columns:1fr}
+    .projects-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .modal-card{grid-template-columns:1fr}
+    .modal-img{max-height:260px}
+    .modal-body{padding:22px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+    .reveal{opacity:1;transform:none}
+  }
+  @media print{
+    .site-header,.modal,.skip-link,.modal-close,.wm{display:none !important}
+    body{background:#fff;color:#000;font-size:11pt}
+    .section{padding:18px 0}
+    .reveal{opacity:1 !important;transform:none !important}
+    .about,.contact-box,.contact{background:#fff !important;color:#000 !important}
+    .about h2,.contact-box h2{color:#000}
+    .about .lede,.contact-box .lede,.geo span,.contact-note{color:#000 !important}
+    .geo span{border-color:#999}
+    .project,.service,.review,.rating-card{break-inside:avoid;box-shadow:none}
+    .projects-grid{grid-template-columns:1fr 1fr}
+    .hero-media img{box-shadow:none}
+    a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;word-break:break-all}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#content">Перейти к содержанию</a>
+<div class="wm" aria-hidden="true">Григорьев Евгений Павлович</div>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Партнёр — наверх">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F6F1E8" stroke-width="1.7" stroke-linejoin="round"><path d="M4 11 12 4l8 7v9H4z"/><path d="M9.5 20v-5h5v5"/></svg>
+      </span>
+      <span>
+        <span class="brand-name">ПАРТНЁР</span>
+        <span class="brand-sub">бани и дома · Самара</span>
+      </span>
+    </a>
+    <button class="burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
+    <nav class="nav" id="nav" aria-label="Основная навигация">
+      <a href="#projects">Проекты</a>
+      <a href="#services">Услуги</a>
+      <a href="#process">Как строим</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+      <a class="btn btn-primary nav-cta" href="https://www.avito.ru/brands/73f721ebade3be210688a034f4b07abb/all" target="_blank" rel="noopener">Написать на Авито</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="https://www.avito.ru/brands/73f721ebade3be210688a034f4b07abb/all" target="_blank" rel="noopener">Написать на Авито</a>
+  </div>
+</header>
+
+<main id="content">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Самара и Самарская область</span>
+        <h1>Каркасные бани и всесезонные дома <em>под ключ</em></h1>
+        <p class="lede">Строим по готовому проекту или вашему эскизу: А-фрейм, барнхаус, шале. Работаем по договору, оплата в три этапа, даём гарантию на выполненные работы.</p>
+        <div class="hero-actions">
+          <a class="btn btn-clay" href="#projects">Смотреть проекты</a>
+          <a class="btn btn-ghost" href="https://www.avito.ru/brands/73f721ebade3be210688a034f4b07abb/all" target="_blank" rel="noopener">
+            Профиль на Авито
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        </div>
+        <p class="hero-note"><span class="dot" aria-hidden="true"></span>Работаем по договору — сроки и цену фиксируем заранее</p>
+      </div>
+      <div class="hero-media">
+        <img src="assets/barnhouse.jpg" alt="Барнхаус 6×9 м с панорамным остеклением, построенный компанией «Партнёр»" width="1280" height="960">
+        <div class="hero-badge">
+          <div>
+            <div class="stars" aria-hidden="true">★★★★★</div>
+            <b>5,0 на Авито</b>
+            <small>10 отзывов клиентов</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Коротко о компании">
+    <div class="wrap facts-grid">
+      <div class="fact"><b>5,0</b><span>рейтинг на Авито</span></div>
+      <div class="fact"><b>20 лет</b><span>опыт бригад</span></div>
+      <div class="fact"><b>10</b><span>готовых проектов в продаже</span></div>
+      <div class="fact"><b>3 этапа</b><span>оплаты по договору</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Услуги</span>
+          <h2>Что мы строим</h2>
+        </div>
+        <p class="lede" style="max-width:42ch">Каркасные бани и дома, отделка и инженерные работы — всё одной командой, без субподряда.</p>
+      </div>
+      <div class="services-grid">
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22382D" stroke-width="1.6" stroke-linejoin="round"><path d="M3 11 12 3l9 8v10H3z"/><path d="M9 21v-6h6v6"/></svg></span>
+          <h3>Строительство каркасных домов</h3>
+          <p>Всесезонные дома для круглогодичного проживания: А-фрейм, барнхаус, шале и классическая каркасная технология.</p>
+          <div class="price">20 000 ₽<small>за услугу, по объявлению на Авито</small></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22382D" stroke-width="1.6" stroke-linecap="round"><path d="M4 16h16M6 16v4M18 16v4M7 12h10l-2 4H9z"/><path d="M12 4v4"/></svg></span>
+          <h3>Чистовая отделка</h3>
+          <p>Доводим объект до состояния «заходи и живи»: стены, потолки, полы, парилка и моечная в бане.</p>
+          <div class="price">1 000 ₽<small>за услугу, по объявлению на Авито</small></div>
+        </article>
+        <article class="service reveal">
+          <span class="service-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#22382D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span>
+          <h3>Электромонтаж</h3>
+          <p>Разводка электрики, подключение оборудования и освещения — с соблюдением норм для деревянных домов.</p>
+          <div class="price">1 000 ₽<small>за услугу, по объявлению на Авито</small></div>
+        </article>
+      </div>
+      <p class="projects-note">Итоговая стоимость зависит от площади, комплектации и материалов. Точную смету считаем после обсуждения проекта.</p>
+    </div>
+  </section>
+
+  <section class="section" id="projects" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Проекты и цены</span>
+          <h2>Готовые объекты</h2>
+        </div>
+        <p class="lede" style="max-width:40ch">10 актуальных предложений с Авито: от компактной бани 4×2,4 м до барнхауса 54 м².</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Фильтр проектов">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Все (10)</button>
+        <button class="filter" type="button" data-filter="house" aria-pressed="false">Дома (4)</button>
+        <button class="filter" type="button" data-filter="bath" aria-pressed="false">Бани (6)</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <a class="project" href="https://www.avito.ru/samara/remont_i_stroitelstvo/karkasnyy_dom_pod_klyuch_7348888568" target="_blank" rel="noopener" data-cat="house" data-title="Каркасный дом под ключ" data-price="1 880 000 ₽" data-specs="Каркасный дом под ключ · Самара" data-loc="Самарская обл., Самара" data-link="https://www.avito.ru/samara/remont_i_stroitelstvo/karkasnyy_dom_pod_klyuch_7348888568" data-desc="Каркасный дом под ключ. Фотографии и параметры — в объявлении на Авито.">
+          <div class="project-img"><img src="assets/dom.jpg" alt="Каркасный дом под ключ, Самара" width="1280" height="960"><span class="tag">Дом</span></div>
+          <div class="project-body">
+            <h3>Каркасный дом под ключ</h3>
+            <span class="project-specs">Всесезонный · под ключ</span>
+            <span class="project-foot"><span class="project-price">1 880 000 ₽</span><span class="project-loc">Самара</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samara/predlozheniya_uslug/a_freym_66m54kv.mterrasa_62.5mvsesezonnyy_7604857169" target="_blank" rel="noopener" data-cat="house" data-title="А-фрейм 6×6 м, 54 м²" data-price="1 650 000 ₽" data-specs="Полезная площадь 54 м² · размеры 6×6 м · терраса 6×2,5 м" data-loc="Самарская обл., Самара" data-link="https://www.avito.ru/samara/predlozheniya_uslug/a_freym_66m54kv.mterrasa_62.5mvsesezonnyy_7604857169" data-desc="Всесезонный А-фрейм 6×6 м с террасой 6×2,5 м. Подробности — в объявлении на Авито.">
+          <div class="project-img"><img src="assets/aframe.jpg" alt="Всесезонный А-фрейм 6×6 м с террасой" width="897" height="960"><span class="tag">Дом</span></div>
+          <div class="project-body">
+            <h3>А-фрейм 6×6 м, 54 м²</h3>
+            <span class="project-specs">Терраса 6×2,5 м · всесезонный</span>
+            <span class="project-foot"><span class="project-price">1 650 000 ₽</span><span class="project-loc">Самара</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/novosemeykino/predlozheniya_uslug/barnhausshale_69m_54mpod_klyuchvsesezonnyy_8116239364" target="_blank" rel="noopener" data-cat="house" data-title="Барнхаус, шале 6×9 м, 54 м²" data-price="1 680 000 ₽" data-specs="6×9 м · 54 м² · всесезонный · под ключ" data-loc="пгт. Новосемейкино" data-link="https://www.avito.ru/novosemeykino/predlozheniya_uslug/barnhausshale_69m_54mpod_klyuchvsesezonnyy_8116239364" data-desc="Дом в стиле барнхаус/шале с панорамным остеклением и террасой. 54 м², всесезонный, под ключ.">
+          <div class="project-img"><img src="assets/barnhouse.jpg" alt="Барнхаус 6×9 м с террасой" width="1280" height="960"><span class="tag">Дом</span></div>
+          <div class="project-body">
+            <h3>Барнхаус, шале 6×9 м</h3>
+            <span class="project-specs">54 м² · всесезонный · под ключ</span>
+            <span class="project-foot"><span class="project-price">1 680 000 ₽</span><span class="project-loc">Новосемейкино</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samara/predlozheniya_uslug/domik_s_verandoy_6m_na_3m_veranda_6m2.5m_7572854599" target="_blank" rel="noopener" data-cat="house" data-title="Домик с верандой 6×3 м" data-price="650 000 ₽" data-specs="Дом 6×3 м · веранда 6×2,5 м" data-loc="Самарская обл., Самара" data-link="https://www.avito.ru/samara/predlozheniya_uslug/domik_s_verandoy_6m_na_3m_veranda_6m2.5m_7572854599" data-desc="Домик 6×3 м с верандой 6×2,5 м. Подробности — в объявлении на Авито.">
+          <div class="project-img"><img src="assets/domik.jpg" alt="Домик 6×3 м с верандой 6×2,5 м" width="1280" height="590"><span class="tag">Дом</span></div>
+          <div class="project-body">
+            <h3>Домик с верандой 6×3 м</h3>
+            <span class="project-specs">Веранда 6×2,5 м</span>
+            <span class="project-foot"><span class="project-price">650 000 ₽</span><span class="project-loc">Самара</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/novosemeykino/remont_i_stroitelstvo/banya_karkasnaya_52.4m_pod_klyuch_s_verandoy_5m2_8180714151" target="_blank" rel="noopener" data-cat="bath" data-title="Баня 5×2,4 м с верандой" data-price="550 000 ₽" data-specs="Баня 5×2,4 м · веранда 5×2 м · под ключ" data-loc="с. Водино" data-link="https://www.avito.ru/novosemeykino/remont_i_stroitelstvo/banya_karkasnaya_52.4m_pod_klyuch_s_verandoy_5m2_8180714151" data-desc="Каркасная баня 5×2,4 м с верандой 5×2 м под ключ.">
+          <div class="project-img"><img src="assets/banya550.jpg" alt="Каркасная баня 5×2,4 м с верандой" width="960" height="960"><span class="tag">Баня</span></div>
+          <div class="project-body">
+            <h3>Баня 5×2,4 м с верандой</h3>
+            <span class="project-specs">Веранда 5×2 м · под ключ</span>
+            <span class="project-foot"><span class="project-price">550 000 ₽</span><span class="project-loc">с. Водино</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samarskaya_oblast_volzhskiy/remont_i_stroitelstvo/prodayu_gotovuyu_banyu_5m_2.4m_7956495003" target="_blank" rel="noopener" data-cat="bath" data-title="Готовая баня 5×2,4 м" data-price="450 000 ₽" data-specs="5×2,4 м · готова к эксплуатации" data-loc="рп. Волжский" data-link="https://www.avito.ru/samarskaya_oblast_volzhskiy/remont_i_stroitelstvo/prodayu_gotovuyu_banyu_5m_2.4m_7956495003" data-desc="Готовая баня 5×2,4 м в продаже — без ожидания стройки.">
+          <div class="project-img"><img src="assets/gotovaya.jpg" alt="Готовая каркасная баня 5×2,4 м" width="1280" height="960"><span class="tag">Баня</span></div>
+          <div class="project-body">
+            <h3>Готовая баня 5×2,4 м</h3>
+            <span class="project-specs">Готова к эксплуатации</span>
+            <span class="project-foot"><span class="project-price">450 000 ₽</span><span class="project-loc">рп. Волжский</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samarskaya_oblast_alekseevka/predlozheniya_uslug/banya_pod_klyuch_karkasnaya_8244770331" target="_blank" rel="noopener" data-cat="bath" data-title="Баня под ключ" data-price="445 000 ₽" data-specs="Каркасная баня · под ключ" data-loc="пгт. Усть-Кинельский" data-link="https://www.avito.ru/samarskaya_oblast_alekseevka/predlozheniya_uslug/banya_pod_klyuch_karkasnaya_8244770331" data-desc="Каркасная баня под ключ. Материалы обработаны антисептиком и противопожарным составом.">
+          <div class="project-img"><img src="assets/banya445.jpg" alt="Каркасная баня под ключ" width="1280" height="960"><span class="tag">Баня</span></div>
+          <div class="project-body">
+            <h3>Баня под ключ</h3>
+            <span class="project-specs">Каркасная · с отделкой</span>
+            <span class="project-foot"><span class="project-price">445 000 ₽</span><span class="project-loc">Усть-Кинельский</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samara/remont_i_stroitelstvo/banya_s_sibirskogo_kedra_5m_2.4m_4468842029" target="_blank" rel="noopener" data-cat="bath" data-title="Баня из сибирского кедра 5×2,4 м" data-price="445 000 ₽" data-specs="5×2,4 м · парилка из сибирского кедра · пол — лиственница" data-loc="Самара" data-link="https://www.avito.ru/samara/remont_i_stroitelstvo/banya_s_sibirskogo_kedra_5m_2.4m_4468842029" data-desc="Стены парилки из сибирского кедра, полы из лиственницы — баня рассчитана на долгую эксплуатацию, в том числе зимой.">
+          <div class="project-img"><img src="assets/kedr.jpg" alt="Баня из сибирского кедра 5×2,4 м" width="720" height="960"><span class="tag">Баня</span></div>
+          <div class="project-body">
+            <h3>Баня из сибирского кедра</h3>
+            <span class="project-specs">5×2,4 м · кедр и лиственница</span>
+            <span class="project-foot"><span class="project-price">445 000 ₽</span><span class="project-loc">Самара</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samara/predlozheniya_uslug/karkasnaya_banya_pod_klyuch_52.4m_8212374405" target="_blank" rel="noopener" data-cat="bath" data-title="Каркасная баня 5×2,4 м" data-price="435 000 ₽" data-specs="5×2,4 м · под ключ" data-loc="СНТ Нижние Дойки" data-link="https://www.avito.ru/samara/predlozheniya_uslug/karkasnaya_banya_pod_klyuch_52.4m_8212374405" data-desc="Каркасная баня под ключ на участке заказчика. Обшивка с трёх сторон.">
+          <div class="project-img"><img src="assets/banya435.jpg" alt="Каркасная баня под ключ 5×2,4 м" width="1280" height="960"><span class="tag">Баня</span></div>
+          <div class="project-body">
+            <h3>Каркасная баня 5×2,4 м</h3>
+            <span class="project-specs">Под ключ · с обшивкой</span>
+            <span class="project-foot"><span class="project-price">435 000 ₽</span><span class="project-loc">СНТ Нижние Дойки</span></span>
+          </div>
+        </a>
+
+        <a class="project" href="https://www.avito.ru/samarskaya_oblast_mirnyy/predlozheniya_uslug/banya_karkasnaya_pod_klyuch_4m_2.4m_7988061896" target="_blank" rel="noopener" data-cat="bath" data-title="Баня 4×2,4 м под ключ" data-price="390 000 ₽" data-specs="4×2,4 м · под ключ" data-loc="пос. Городцовка" data-link="https://www.avito.ru/samarskaya_oblast_mirnyy/predlozheniya_uslug/banya_karkasnaya_pod_klyuch_4m_2.4m_7988061896" data-desc="Компактная баня 4×2,4 м под ключ — самый доступный вариант в линейке.">
+          <div class="project-img"><img src="assets/banya390.jpg" alt="Каркасная баня 4×2,4 м под ключ" width="1280" height="960"><span class="tag">Баня</span></div>
+          <div class="project-body">
+            <h3>Баня 4×2,4 м под ключ</h3>
+            <span class="project-specs">Компактная · под ключ</span>
+            <span class="project-foot"><span class="project-price">390 000 ₽</span><span class="project-loc">пос. Городцовка</span></span>
+          </div>
+        </a>
+      </div>
+      <p class="projects-note">Нажмите на карточку, чтобы посмотреть детали; Ctrl/⌘+клик сразу открывает объявление на Авито. Цены и наличие — из актуальных объявлений.</p>
+    </div>
+  </section>
+
+  <section class="section" id="process" style="padding-top:0">
+    <div class="wrap">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2 style="max-width:18ch">От заявки до ключей</h2>
+      <div class="steps">
+        <div class="step reveal"><h3>Заявка</h3><p>Обсуждаем задачу, участок и бюджет. Отвечаем на вопросы по материалам и срокам.</p></div>
+        <div class="step reveal"><h3>Проект и смета</h3><p>Берём готовый проект или разрабатываем по вашему эскизу, считаем стоимость.</p></div>
+        <div class="step reveal"><h3>Договор</h3><p>Фиксируем объём работ, сроки и цену. Оплата — в три этапа по ходу стройки.</p></div>
+        <div class="step reveal"><h3>Строительство</h3><p>Работают бригады с 20-летним стажем. Держим на связи, приглашаем на приёмку этапов.</p></div>
+        <div class="step reveal"><h3>Сдача объекта</h3><p>Передаём готовую баню или дом и даём гарантию на выполненные работы.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">О компании</span>
+        <h2>Строим так, как строили бы себе</h2>
+        <p class="lede" style="margin-top:18px">«Партнёр» — строительная бригада из Самары. С 2024 года работаем на Авито, за это время — 10 отзывов и рейтинг 5,0 без единой оценки ниже пятёрки.</p>
+        <ul class="checklist">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D99A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span>Строим по проекту и по индивидуальному эскизу: А-фрейм, барнхаус, шале</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D99A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span>Работаем по договору, оплата в три этапа в соответствии с процессом стройки</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D99A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span>Соблюдаем нормы пожарной безопасности и свод правил по каркасному домостроению</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D99A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span>Свои бригады с 20-летним стажем — без неквалифицированной рабочей силы</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D99A6E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12 5 5L20 6"/></svg><span>Проверенные поставщики и качественные материалы, обработка антисептиком</span></li>
+        </ul>
+      </div>
+      <div class="about-media">
+        <img src="assets/dom.jpg" alt="Каркасный дом, построенный компанией «Партнёр»" width="1280" height="960">
+        <div class="about-quote">
+          <b>Гарантия на работы</b>
+          Фиксируем обязательства в договоре и отвечаем за результат после сдачи объекта.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="reviews">
+    <div class="wrap">
+      <span class="eyebrow">Отзывы</span>
+      <h2 style="margin-bottom:36px">Что говорят клиенты</h2>
+      <div class="reviews-head">
+        <aside class="rating-card">
+          <div class="rating-big">5,0</div>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>10 отзывов на Авито: девять с оценкой 5 и один без оценки. Средний балл — 5,0.</p>
+          <div class="rating-bars" aria-hidden="true">
+            <div class="bar-row"><span>5</span><span class="bar"><i style="width:100%"></i></span><span>9</span></div>
+            <div class="bar-row"><span>4</span><span class="bar"><i style="width:0"></i></span><span>0</span></div>
+            <div class="bar-row"><span>3</span><span class="bar"><i style="width:0"></i></span><span>0</span></div>
+            <div class="bar-row"><span>2</span><span class="bar"><i style="width:0"></i></span><span>0</span></div>
+            <div class="bar-row"><span>1</span><span class="bar"><i style="width:0"></i></span><span>0</span></div>
+          </div>
+          <a class="btn btn-ghost" style="width:100%" href="https://www.avito.ru/brands/73f721ebade3be210688a034f4b07abb/all" target="_blank" rel="noopener">Все отзывы на Авито</a>
+        </aside>
+        <div class="reviews-grid">
+          <article class="review reveal">
+            <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p>«Ребята стали для нас настоящей палочкой-выручалочкой, а именно вошли в наше непростое положение и вместе с нами разработали отличнейший проект, подходящий под наш бюджет… Работу выполнили в срок, согласно договору, несмотря на все сюрпризы, которые готовила нам погода».</p>
+            <div class="review-meta"><span class="avatar" aria-hidden="true">А</span><span><b>Алексей</b><small>30 июня · домокомплект 6×7 м</small></span></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p>«Очень хорошая подача с первой консультации по телефону, полная прозрачность процесса постройки, ведение процесса ввода в эксплуатацию бани! Все обещания в обговоренные сроки! Цена на уровне, дешевле чем у 4 конкурентов по Самаре…»</p>
+            <div class="review-meta"><span class="avatar" aria-hidden="true">С</span><span><b>Самарский кузовной цех</b><small>6 ноября · баня 5×2,4 м с верандой</small></span></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p>«Домом очень довольна, получился теплый, уютный».</p>
+            <div class="review-meta"><span class="avatar" aria-hidden="true">Н</span><span><b>Наталья</b><small>11 ноября 2025 · дом-баня 42,5 м² в стиле лофт</small></span></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p>«Все условия и все наши „хотелки“ были учтены или объяснены нам. После встречи у нас не осталось сомнений, что строить будем с „Партнёром“».</p>
+            <div class="review-meta"><span class="avatar" aria-hidden="true">М</span><span><b>Мария Телегина</b><small>30 апреля · каркасная баня 6×2,4 м</small></span></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p>«Компания честная, работают оперативно, добросовестно, очень качественно, красиво. Всё продуманно до мелочей!»</p>
+            <div class="review-meta"><span class="avatar" aria-hidden="true">М</span><span><b>Марина Мариничева</b><small>25 августа 2025 · каркасные бани</small></span></div>
+          </article>
+          <article class="review reveal">
+            <div class="stars" aria-label="Оценка 5 из 5">★★★★★</div>
+            <p>«Грамотный и профессиональный подход к своему делу! Учтены все мои пожелания… И вот через две недели банька готова!»</p>
+            <div class="review-meta"><span class="avatar" aria-hidden="true">Д</span><span><b>Дмитрий</b><small>19 ноября 2025 · каркасные бани</small></span></div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div>
+        <span class="eyebrow">Вопросы</span>
+        <h2>Коротко о главном</h2>
+        <p class="lede" style="margin-top:16px">Не нашли ответ? Напишите в сообщения на Авито — ответим и предложим проект под ваш бюджет.</p>
+      </div>
+      <div>
+        <details class="faq" open>
+          <summary>Сколько времени занимает строительство бани?</summary>
+          <p>По отзывам клиентов, баню сдаём примерно за две недели после старта работ. Точный срок зависит от проекта, комплектации и погоды и фиксируется в договоре.</p>
+        </details>
+        <details class="faq">
+          <summary>Можно ли построить по своему эскизу?</summary>
+          <p>Да. Работаем как по готовым проектам (А-фрейм, барнхаус, шале), так и по эскизам заказчика — подбираем решение под участок и бюджет.</p>
+        </details>
+        <details class="faq">
+          <summary>Как проходит оплата?</summary>
+          <p>По договору, в три этапа — в соответствии с процессом строительства. Так заказчик видит результат каждого этапа до следующего платежа.</p>
+        </details>
+        <details class="faq">
+          <summary>Даёте ли гарантию?</summary>
+          <p>Да, на выполненные работы даём гарантию. Обязательства и порядок приёмки фиксируются в договоре.</p>
+        </details>
+        <details class="faq">
+          <summary>В каких районах работаете?</summary>
+          <p>Самара и Самарская область. Среди объектов — Водино, Усть-Кинельский, Волжский, Городцовка, Новосемейкино, СНТ Нижние Дойки.</p>
+        </details>
+        <details class="faq">
+          <summary>Можно ли посмотреть, как идёт стройка?</summary>
+          <p>Да. Заказчиков приглашаем на приёмку результатов этапов, можно приехать на базу компании и посмотреть работы в процессе.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="wrap">
+      <div class="contact-box">
+        <div>
+          <span class="eyebrow" style="color:#D99A6E">Контакты</span>
+          <h2>Обсудим ваш проект?</h2>
+          <p class="lede" style="margin-top:16px">Расскажите про участок и бюджет — предложим проект бани или дома и посчитаем смету. Вся переписка и актуальные цены — в профиле на Авито.</p>
+          <div class="geo">
+            <span>Самара</span><span>Новосемейкино</span><span>Кинель</span><span>Красноярский р-н</span><span>Волжский</span>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-light" href="https://www.avito.ru/brands/73f721ebade3be210688a034f4b07abb/all" target="_blank" rel="noopener">
+            Написать на Авито
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="btn btn-outline-light" href="#projects">Все 10 проектов</a>
+          <p class="contact-note">Связь — через сообщения Авито: так сохраняется история заявки и цены.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="brand-name" style="margin-bottom:6px">ПАРТНЁР</div>
+      <p>Каркасные бани и всесезонные дома в Самаре и Самарской области. Сайт собран по открытым данным профиля компании на Авито: цены и наличие объектов уточняйте в объявлениях.</p>
+    </div>
+    <a href="https://www.avito.ru/brands/73f721ebade3be210688a034f4b07abb/all" target="_blank" rel="noopener">Профиль на Авито ↗</a>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-card" style="position:relative">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Закрыть">✕</button>
+    <div class="modal-img"><img id="modalImg" src="assets/barnhouse.jpg" alt="" width="1280" height="960"></div>
+    <div class="modal-body">
+      <h3 id="modalTitle"></h3>
+      <p class="modal-specs" id="modalSpecs"></p>
+      <p class="muted" id="modalDesc" style="font-size:.94rem"></p>
+      <div class="modal-price" id="modalPrice"></div>
+      <p class="muted" style="font-size:.82rem" id="modalLoc"></p>
+      <a class="btn btn-primary" id="modalLink" target="_blank" rel="noopener">Открыть объявление на Авито</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var header = document.querySelector('.site-header');
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+    header.classList.toggle('scrolled', window.scrollY > 8);
+
+    var burger = document.getElementById('burger');
+    var nav = document.getElementById('nav');
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) {
+        nav.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    var filters = document.querySelectorAll('.filter');
+    var cards = Array.prototype.slice.call(document.querySelectorAll('.project'));
+
+    function setCounts() {
+      filters.forEach(function (btn) {
+        var cat = btn.dataset.filter;
+        var n = cat === 'all' ? cards.length : cards.filter(function (c) { return c.dataset.cat === cat; }).length;
+        var label = cat === 'all' ? 'Все' : (cat === 'house' ? 'Дома' : 'Бани');
+        btn.textContent = label + ' (' + n + ')';
+      });
+    }
+    setCounts();
+
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        filters.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+        var cat = btn.dataset.filter;
+        cards.forEach(function (card) {
+          var show = cat === 'all' || card.dataset.cat === cat;
+          card.hidden = !show;
+        });
+      });
+    });
+
+    var modal = document.getElementById('modal');
+    var modalCard = modal.querySelector('.modal-card');
+    var modalImg = document.getElementById('modalImg');
+    var modalTitle = document.getElementById('modalTitle');
+    var modalSpecs = document.getElementById('modalSpecs');
+    var modalDesc = document.getElementById('modalDesc');
+    var modalPrice = document.getElementById('modalPrice');
+    var modalLoc = document.getElementById('modalLoc');
+    var modalLink = document.getElementById('modalLink');
+    var closeBtn = document.getElementById('modalClose');
+    var lastFocus = null;
+    var inerted = [];
+
+    function focusables() {
+      return Array.prototype.filter.call(
+        modal.querySelectorAll('button, a[href]'),
+        function (el) { return el.offsetParent !== null; }
+      );
+    }
+
+    function openModal(card) {
+      lastFocus = card;
+      var img = card.querySelector('img');
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+      modalTitle.textContent = card.dataset.title;
+      modalSpecs.textContent = card.dataset.specs;
+      modalDesc.textContent = card.dataset.desc;
+      modalPrice.textContent = card.dataset.price;
+      modalLoc.textContent = card.dataset.loc;
+      modalLink.href = card.dataset.link;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      var sw = window.innerWidth - document.documentElement.clientWidth;
+      document.body.classList.add('modal-open');
+      if (sw > 0) document.body.style.paddingRight = sw + 'px';
+      inerted = [];
+      [document.querySelector('.site-header'), document.querySelector('main'), document.querySelector('footer')].forEach(function (el) {
+        if (el) { el.inert = true; inerted.push(el); }
+      });
+      closeBtn.focus();
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      document.body.style.paddingRight = '';
+      inerted.forEach(function (el) { el.inert = false; });
+      inerted = [];
+      if (lastFocus) lastFocus.focus();
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+        e.preventDefault();
+        openModal(card);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') { closeModal(); return; }
+      if (e.key === 'Tab') {
+        var list = focusables();
+        if (!list.length) return;
+        var first = list[0], last = list[list.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && (document.activeElement === last || !modal.contains(document.activeElement))) { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    var revealEls = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+    function revealAll() {
+      revealEls.forEach(function (el) { el.classList.add('in'); });
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    } else {
+      revealAll();
+    }
+    window.addEventListener('beforeprint', revealAll);
+    window.setTimeout(revealAll, 8000);
+  })();
+</script>
+</body>
+</html>
+
+
+
+
+
